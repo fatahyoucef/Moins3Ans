@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculateur de Coût d'Importation de Voiture</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="variables-container">
+        <p>Euro->Dzd : <span id="eurotodzd"></span></p>
+        <p>TaxeExpert : <span id="experttaxe"></span></p>
+        <p>Euro->Dzd(noir)  : <span id="eurotodzdnoir"></span></p>
+        <p>PourcentageDouane : <span id="Custompercentage"></span></p>
+    </div>
+    <div class="container">
+        <h1>Calculateur de Coût d'Importation de Voiture</h1>
+        <form id="costForm">
+            <label for="carPrice">Prix de la Voiture (€) :</label>
+            <input type="number" id="carPrice" name="carPrice" required>
+            <p id="customTax">Prix Sans Tva : €<span id="carPriceWithoutTva"></span></p>
+
+            <label for="engineType">Type de Moteur :</label>
+            <select id="engineType" name="engineType">
+                <option value="essence">Essence</option>
+                <option value="electrique">Électrique</option>
+            </select>
+
+            <label for="shippingCost">Coût d'Expédition (€) :</label>
+            <input type="number" id="shippingCost" name="shippingCost" required>
+
+            <button type="button" onclick="calculateCosts()">Calculer</button>
+        </form>
+
+        <p id="customTax">Taxe Douanière : €<span id="customTaxValue"></span></p>
+        <p id="customTaxDz">Taxe Douanière : DZD<span id="customTaxValueDZD"></span></p>
+        <p id="finalPrice">Prix Final : €<span id="finalPriceValue"></span></p>
+        <p id="finalPriceDZD">Prix Final : DZD <span id="finalPriceValueDZD"></span></p>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
